@@ -4,7 +4,7 @@ function Array-Contains-Row {
 
 	Process {
 		#is there any string we search for in any of the rows?
-		[array]$resArray = $fileContent | where { $_ | Select-String -Pattern $searchedString }
+		[array]$resArray = $fileContent | where { $_ | Select-String –caseSensitive -Pattern $searchedString }
 
 		if ($resArray.Count -eq 0) {
 			return $false
